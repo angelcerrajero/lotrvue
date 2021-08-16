@@ -1,0 +1,60 @@
+<template>
+  <a-table
+    :dataSource="quotes"
+    :columns="columns"
+    :pagination="{ pageSize: 10 }"
+    :loading="loading"
+    @change="onChange"
+    :row-selection="rowSelection"
+  >
+  </a-table>
+</template>
+<script>
+import { mapActions } from 'vuex'
+function onChange (pagination, filters, sorter) {
+  console.log('params', pagination);
+  console.log('params', pagination, filters, sorter);
+}
+
+export default {
+  data: () => ({
+    quotes: [],
+  }),
+  mounted() {
+    const data = JSON.parse(localStorage.getItem('logAction'));
+    this.quotes = data;
+  },
+  
+  computed: {
+    data() {
+        return localStorage.getItem('logAction');
+    },  
+    columns () {
+      return [
+        {
+          title: 'Quote',
+          dataIndex: 'quote',
+        },
+        {
+          title: 'Action',
+          dataIndex: 'action',
+        },
+        {
+          title: 'fakeUrl',
+          dataIndex: 'fakeUrl',
+        },
+      ];
+    },
+  },
+  methods: {
+    ...mapActions(['getCharactersByName']),
+    onChange,
+    getQuotesInfo (character) {
+      this.$emit('characterSelection', character)
+    },
+    filterByName (value) {
+      this.getCharactersByName(value)
+    },
+  },
+};
+</script>

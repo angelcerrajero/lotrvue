@@ -21,8 +21,9 @@ import {
 } from 'ant-design-vue';
 
 import store from './store'
+import router from './router'
 
-const app = createApp(App).use(store);
+const app = createApp(App).use(router).use(store);
 app.config.productionTip = false;
 app.use(Layout);
 app.use(Button);
