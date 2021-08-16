@@ -2,21 +2,23 @@ import { createApp } from 'vue'
 import App from './App.vue'
 
 import {
-    Layout,
-    Button,
-    Spin,
-    Result,
-    Card,
-    Divider,
-    Col,
-    Row,
-    Drawer,
-    Table,
-    Form,
-    InputNumber,
-    Tag,
-    Menu,
-  } from 'ant-design-vue';
+  Layout,
+  Button,
+  Spin,
+  Result,
+  Card,
+  Divider,
+  Col,
+  Row,
+  Drawer,
+  Table,
+  Form,
+  InputNumber,
+  Tag,
+  Menu,
+  Input,
+  Popconfirm
+} from 'ant-design-vue';
 
 import store from './store'
 
@@ -36,4 +38,6 @@ app.use(Form);
 app.use(InputNumber);
 app.use(Tag);
 app.use(Menu);
+app.use(Input);
+app.use(Popconfirm);
 app.mount('#app');
