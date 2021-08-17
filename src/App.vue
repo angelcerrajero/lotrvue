@@ -1,8 +1,24 @@
 <template>
-  <div id="nav">
+<!-- <a-layout-header :style="{ position: 'fixed', zIndex: 1, width: '100%' }"> -->
+      <div class="logo" />
+      <a-menu
+        theme="dark"
+        mode="horizontal"
+        :default-selected-keys="['2']"
+        :style="{ lineHeight: '64px' }"
+      >
+      <div id="nav">
+        <router-link to="/">Home</router-link> |
+        <router-link to="/requests">Requests</router-link>
+      </div>
+        <!-- <router-link to="home">Characters and Quotes</router-link>
+        <router-link to="/requests">Requests</router-link> -->
+      </a-menu>
+    <!-- </a-layout-header> -->
+  <!-- <div id="nav">
     <router-link to="/">Home</router-link> |
     <router-link to="/requests">Requests</router-link>
-  </div>
+  </div> -->
   <router-view/>
 </template>
 

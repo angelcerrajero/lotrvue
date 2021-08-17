@@ -1,4 +1,5 @@
 <template>
+<div class="home" :style="{marginTop: '64px', paddingRight: '50px', paddingLeft: '50px'}">
   <a-table
     :dataSource="quotes"
     :columns="columns"
@@ -8,6 +9,7 @@
     :row-selection="rowSelection"
   >
   </a-table>
+</div>
 </template>
 <script>
 import { mapActions } from 'vuex'

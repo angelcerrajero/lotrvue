@@ -1,5 +1,7 @@
 <template>
   <!-- <a-table :columns="columns" :data-source="characters" /> -->
+  <a-layout-content :style="{ padding: '0 50px', marginTop: '64px' }">
+    <div :style="{ background: '#fff', padding: '24px', minHeight: '380px', marginTop: '64px' }">
   <a-table
     :dataSource="characterQuotes"
     :columns="columns"
@@ -11,6 +13,8 @@
       <a @click="onDelete(record)">Delete</a>
     </template>
   </a-table>
+    </div>
+  </a-layout-content>
 </template>
 <script>
 //import apiClient from '../lib/apiClient'
