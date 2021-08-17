@@ -7,15 +7,15 @@
     :loading="loading"
     @change="onChange"
     :row-selection="rowSelection"
+    :rowKey="record => record.date"
   >
   </a-table>
 </div>
 </template>
 <script>
 import { mapActions } from 'vuex'
-function onChange (pagination, filters, sorter) {
-  console.log('params', pagination);
-  console.log('params', pagination, filters, sorter);
+function onChange () {
+
 }
 
 export default {

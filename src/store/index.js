@@ -34,7 +34,7 @@ export default createStore({
         const data = await apiClient({ url: '/character' })
         commit('setCharacters', data);
       } catch (err) {
-        console.log('error', err)
+        throw new Error(err)
       }
     },
     async getCharactersByName ({ commit }, text) {
@@ -42,7 +42,7 @@ export default createStore({
         const data = await apiClient({ url: `/character?name=/${text}/i` })
         commit('setCharacters', data);
       } catch (err) {
-        console.log('error', err)
+        throw new Error(err)
       }
     },
     async getQuotes ({ commit }) {
@@ -52,11 +52,10 @@ export default createStore({
         })
         commit('setQuotes', data);
       } catch (err) {
-        console.log('error', err)
+        throw new Error(err)
       }
     },
     async getGender ({ commit }) {
-      console.log('paso')
       try {
         const data = await apiClient({
           url: '/character'
@@ -69,7 +68,7 @@ export default createStore({
         })
         commit('setGenders', arr);
       } catch (err) {
-        console.log('error', err)
+        throw new Error(err)
       }
     },
 
@@ -78,7 +77,7 @@ export default createStore({
         const data = Object.keys(_.groupBy(state.characters, n => n[key])).map(k => { return { text: k, value: k } })
         commit('setFilter', { key, data })
       } catch (err) {
-        console.log('error', err)
+        throw new Error(err)
       }
     }
 

@@ -1,24 +1,11 @@
 <template>
   <a-layout id="components-layout-demo-fixed">
-    <!-- <a-layout-header :style="{ position: 'fixed', zIndex: 1, width: '100%' }">
-      <div class="logo" /> -->
-      <!-- <a-menu
-        theme="dark"
-        mode="horizontal"
-        :default-selected-keys="['2']"
-        :style="{ lineHeight: '64px' }"
-      > -->
-        <!-- <router-link to="home">Characters and Quotes</router-link>
-        <router-link to="/requests">Requests</router-link> -->
-      <!-- </a-menu> -->
-    <!-- </a-layout-header> -->
     <a-layout-content :style="{ padding: '0 50px', marginTop: '64px' }">
       <div :style="{ background: '#fff', padding: '24px', minHeight: '380px', marginTop: '64px' }">
         <h3>Characters</h3>
         <div :style="{marginTop: '16px'}">
           <Characters @characterSelection="characterSelection" />
         </div>
-        <h3>Quotes</h3>
         <div :style="{marginTop: '16px'}">
           <Quotes
             v-if="character"

@@ -3,7 +3,7 @@
     placeholder="Search by name"
     @search="filterByName"
     allowClear
-  ></a-input-search>
+  />
   <a-table
     :dataSource="characters"
     :columns="columns"
@@ -11,6 +11,8 @@
     :loading="loading"
     @change="onChange"
     :row-selection="rowSelection"
+    :rowKey="record => record._id"
+    :style="{marginTop: '20px'}"
   >
   </a-table>
 </template>
@@ -18,11 +20,10 @@
 //import apiClient from '../lib/apiClient'
 import _ from 'lodash'
 import { mapActions, mapState } from 'vuex'
-function onChange (pagination, filters, sorter) {
-  console.log('params', pagination);
-  console.log('params', pagination, filters, sorter);
+function onChange () {
+  //Aqui tendria que ir la paginación por API usando los parametros pagination, filters, sorter que viene en dicha función
+  // onChange(pagination, filters, sorter)
 }
-
 const getFilter = (arr, key) => Object.keys(_.groupBy(arr, n => n[key])).map(k => { return { text: k, value: k } })
 
 export default {
