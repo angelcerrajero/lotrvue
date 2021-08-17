@@ -57,10 +57,12 @@ export default {
     onDelete (quote) {
       alert(`DELETE to: https://the-one-api.dev/v2/quotes/${quote._id}`)
       console.log('quote', quote)
+      let date = new Date();
       let action = {
         quote: quote.dialog,
         action: 'Borrar',
-        fakeUrl: `DELETE /quotes/${quote._id}`
+        fakeUrl: `DELETE /quotes/${quote._id}`,
+        date: `${date.getDate()}-${date.getMonth()+1}-${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`,
       }
       this.log ? JSON.parse(localStorage.getItem('logAction')) : []
       console.log('this.log', this.log)

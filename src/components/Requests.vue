@@ -43,6 +43,10 @@ export default {
           title: 'fakeUrl',
           dataIndex: 'fakeUrl',
         },
+        {
+          date: 'fakeUrl',
+          dataIndex: 'date',
+        },
       ];
     },
   },
