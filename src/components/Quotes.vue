@@ -56,7 +56,6 @@ export default {
   methods: {
     onDelete (quote) {
       alert(`DELETE to: https://the-one-api.dev/v2/quotes/${quote._id}`)
-      console.log('quote', quote)
       let date = new Date();
       let action = {
         quote: quote.dialog,
