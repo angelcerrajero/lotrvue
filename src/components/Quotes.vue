@@ -67,8 +67,13 @@ export default {
         fakeUrl: `DELETE https://the-one-api.dev/v2/quotes/quotes/${quote._id}`,
         date: `${date.getDate()}-${date.getMonth()+1}-${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`,
       }
-      this.log ? JSON.parse(localStorage.getItem('logAction')) : []
-      this.log.push(action)
+      let oldData = JSON.parse(localStorage.getItem('logAction'))
+      if(oldData === null){
+        this.log.push(action)
+      } else {
+        this.log = oldData;
+        this.log.push(action)
+      }
       localStorage.setItem('logAction', JSON.stringify(this.log))
 
     }
