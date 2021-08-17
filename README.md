@@ -1,4 +1,4 @@
-# vuelotr
+# LORD OF THE RINGS API WITH VUEJS
 
 ## Project setup
 ```
